@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shamil-devops-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: shamil-devops-app
+  template:
+    metadata:
+      labels:
+        app: shamil-devops-app
+    spec:
+      containers:
+        - name: shamil-devops-app
+          image: moscoyt/shamil-devops-app:latest
+          ports:
+            - containerPort: 5000
